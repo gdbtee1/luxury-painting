@@ -1,0 +1,157 @@
+.inquire-page {
+  background: #f7f4ed;
+  color: #24231f;
+}
+
+.paint-canvas {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 75% 35%, #e3d3bb 0%, transparent 42%),
+    radial-gradient(ellipse at 20% 75%, #bba98f70 0%, transparent 47%),
+    #eee7db;
+  overflow: hidden;
+}
+
+.paint-canvas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .5;
+  background-image:
+    repeating-linear-gradient(
+      112deg,
+      transparent 0px,
+      rgba(94,74,52,.045) 2px,
+      transparent 7px,
+      rgba(255,255,255,.14) 15px
+    );
+  pointer-events: none;
+}
+
+.paint-stroke {
+  position: absolute;
+  width: min(65vw,850px);
+  height: min(42vw,450px);
+  background: #bda68a;
+  border-radius: 55% 35% 60% 25%;
+  filter: blur(55px);
+  opacity: .19;
+  transform: rotate(-23deg);
+  pointer-events: none;
+}
+
+.paint-rule {
+  height: 1px;
+  background: rgba(36,35,31,.23);
+}
+
+.atelier-field {
+  width: 100%;
+  min-height: 60px;
+  border: 0;
+  border-bottom: 1px solid rgba(36,35,31,.24);
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color: #24231f;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  transition: border-color .3s;
+}
+
+.atelier-field:focus {
+  border-bottom-color: #947654;
+}
+
+.atelier-field::placeholder {
+  color: #968c7e;
+}
+
+.atelier-field[aria-invalid="true"] {
+  border-bottom-color: #b64f47;
+}
+
+.atelier-choice {
+  border: 1px solid rgba(36,35,31,.2);
+  padding: 17px 20px;
+  min-height: 64px;
+  text-align: left;
+  transition: background .3s, color .3s, border-color .3s;
+}
+
+.atelier-choice:hover {
+  border-color: #a58d6a;
+}
+
+.atelier-choice[aria-pressed="true"] {
+  background: #24231f;
+  color: #f7f4ed;
+  border-color: #24231f;
+}
+
+.inquire-submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  min-height: 76px;
+  padding: 22px 27px;
+  background: #24231f;
+  color: #f7f4ed;
+  transition: background .3s;
+}
+
+.inquire-submit:hover {
+  background: #796851;
+}
+
+.inquire-submit:focus-visible,
+.atelier-choice:focus-visible,
+.pigment-option:focus-visible {
+  outline: 2px solid #a58d6a;
+  outline-offset: 4px;
+}
+
+.pigment-option {
+  transition: transform .3s;
+}
+
+.pigment-option:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 640px) {
+  .paint-stroke {
+    width: 100vw;
+    height: 45vh;
+    filter: blur(35px);
+  }
+
+  .inquire-submit {
+    width: 100%;
+  }
+}
+
+/* Refined hand-finished mineral atmosphere */
+.paint-canvas {
+  background:
+    radial-gradient(ellipse at 18% 22%, rgba(255,255,255,.65), transparent 42%),
+    radial-gradient(ellipse at 78% 40%, rgba(167,139,104,.25), transparent 43%),
+    radial-gradient(ellipse at 32% 87%, rgba(195,170,134,.32), transparent 50%),
+    #eae0d1;
+}
+
+.paint-canvas::before {
+  background:
+    radial-gradient(ellipse at 25% 50%, rgba(255,255,255,.22), transparent 55%),
+    radial-gradient(ellipse at 77% 75%, rgba(110,87,62,.12), transparent 50%);
+  opacity: .8;
+}
+
+.paint-stroke {
+  filter: blur(85px);
+  opacity: .13;
+}
